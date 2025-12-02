@@ -1,0 +1,101 @@
+/* Universal reset: removes default spacing and standardizes box model for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Styles applied to the entire page body */
+body {
+  overflow-x: hidden; /* Prevents horizontal scrollbars */
+  font-family: 'Segoe UI', sans-serif; /* Sets readable, clean default font */
+  background: #fff; /* White background for the whole page */
+  scroll-behavior: smooth; /* Enables smooth animated scrolling when navigating between sections */
+}
+ 
+.content-sectionTwo {  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 0; 
+}
+
+/* Centers images horizontally and vertically within their parent container */
+.image-container {
+  width: 100%; /* Fills the full width of its parent */
+  height: 100%; /* Fills full height — works only if parent has defined height */
+  overflow: hidden; /* Prevents scrollbars if image overflows */
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+}
+
+/* Ensures images scale responsively without distortion */
+.image-container img {
+  max-width: 100%; /* Image never exceeds container width */
+  max-height: 100%; /* Image never exceeds container height */
+  object-fit: contain; /* Preserves aspect ratio; fits entire image inside container */
+  object-position: center; /* Centers the image within its display area */
+  display: block; /* Removes extra space below inline images */
+}
+
+/* Styles for the contents (navigation) section — uses a background image instead of <img> */
+#contents {
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Needed for absolute positioning of child elements */
+  background-image: url('images/slide2.png'); /* Sets background image */
+  background-size: cover; /* Scales image to cover entire area */
+  background-position: center; /* Centers image within the container */
+  background-repeat: no-repeat; /* Prevents tiling */
+  padding: 0;
+  margin: 0;
+}
+
+/* Container for the clickable buttons (image-based navigation) */
+.tableofcontent {
+  position: absolute; /* Positioned relative to nearest positioned ancestor (#contents) */
+  z-index: 2; /* Places buttons above background image */
+  display: flex;
+  flex-direction: column; /* Stacks buttons vertically */
+  gap: 15px; /* Adds uniform spacing between buttons */
+  align-items: center; /* Centers buttons horizontally */
+  top: 60%; /* Places container 60% down from top of #contents */
+  left: 50%; /* Offsets left edge to center */
+  transform: translate(-50%, -50%); /* Fine-tunes centering (moves left/up by half its size) */
+  width: 575px; /* Sets fixed width for alignment and consistency */
+}
+
+/* General style for each button (which are <img> elements acting as buttons) */
+.content-btn {
+  width: 100%; /* Fills container width */
+  max-width: 400px; /* Prevents oversized buttons on wide screens */
+  cursor: pointer; /* Shows hand cursor to indicate clickability */
+  transition: transform 0.2s ease, filter 0.2s ease; /* Smooth hover animations */
+  border-radius: 8px; /* Softens corners */
+  opacity: 0.95; /* Slightly transparent by default */
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); /* Adds subtle shadow for depth */
+}
+
+/* Hover effect: makes buttons slightly larger, fully opaque, and shadow more pronounced */
+.content-btn:hover {
+  transform: scale(1.02); /* Grows button by 2% */
+  opacity: 1;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+}
+
+/* Ensures pointer events (clicks, hovers) are still registered — often redundant but safe */
+.content-btn {
+  pointer-events: auto;
+}
+
+/* Base layout for standard content sections (those with class 'content-section') */
+.content-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Each section is at least full viewport height */
+}

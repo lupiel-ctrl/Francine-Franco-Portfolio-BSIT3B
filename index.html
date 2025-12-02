@@ -1,0 +1,90 @@
+<!-- Declares the document type as HTML -->
+<!DOCTYPE html>
+<!-- Sets the root element and specifies the language as English -->
+<html lang="en">
+<head>
+  <!-- Ensures proper character encoding -->
+  <meta charset="UTF-8" />
+  <!-- Makes the layout responsive on mobile devices by setting viewport width and initial zoom level -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Sets the title shown in the browser tab -->
+  <title>Francine's Portfolio 2025</title>
+  <!-- Links to an external CSS file named 'style.css' for styling the page -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- First section (home/intro slide) -->
+  <section id="firstPage" class="content-section">
+    <!-- Container for centering and controlling image layout -->
+    <div class="image-container">
+      <!-- Displays the first slide image; alt text describes the image for accessibility -->
+      <img src="Images/slide1.png" alt="francine's Portfolio - Exploring Design & Creativity">
+    </div>
+  </section>
+
+  <!-- Second section: interactive table of contents with clickable image buttons -->
+  <section id="contents" class="content-section">
+    <!-- Container holding the navigation buttons (image-based) -->
+    <div class="tableofcontent">
+      <!-- Each img acts as a button; 'data-target' stores the ID of the section to scroll to -->
+      <img src="Images/Intro.png" class="content-btn" data-target="thirdPage" alt="Go to Introduction">
+      <img src="Images/AboutMe.png" class="content-btn" data-target="fourthPage" alt="Go to About Me">
+      <img src="Images/Creativity.png" class="content-btn" data-target="fifthPage" alt="Go to What Fuels My Creativity">
+      <img src="Images/NextStep.png" class="content-btn" data-target="seventhPage" alt="Go to My Next Steps">
+    </div>
+  </section>
+
+  <!-- Third section: Introduction slide -->
+  <section id="thirdPage" class="content-section">
+    <div class="image-container">
+      <img src="images/slide3.png" alt="Hi, my name's... Francine!">
+    </div>
+  </section>
+
+  <!-- Fourth section: About Me / current status -->
+  <section id="fourthPage" class="content-section">
+    <div class="image-container">
+      <img src="images/slide4.png" alt="Here's Where I Am Now!">
+    </div>
+  </section>
+
+  <!-- Fifth section: Creativity inspiration — uses alternate styling class 'content-sectionTwo' -->
+  <section id="fifthPage" class="content-sectionTwo">
+    <div class="image-container">
+      <img src="images/slide5.png" alt="What Fuels My Creativity">
+    </div>
+  </section>
+
+  <!-- Sixth section: Hobbies & Interests -->
+  <section id="sixthPage" class="content-section">
+    <div class="image-container">
+      <img src="Images/slide6.png" alt="Hobbies & Interests!">
+    </div>
+  </section>
+
+  <!-- Seventh section: Future goals — styled with 'content-sectionTwo' -->
+  <section id="seventhPage" class="content-sectionTwo">
+    <div class="image-container">
+      <img src="Images/slide7.png" alt="My Next Steps">
+    </div>
+  </section>
+
+  <!-- Eighth section: Current focus & aspirations -->
+  <section id="eighthPage" class="content-sectionTwo">
+    <div class="image-container">
+      <img src="Images/slide8.png" alt="Current Focus & Wish For The Future!">
+    </div>
+  </section>
+
+  <!-- Ninth (final) section: Closing slide -->
+  <section id="ninthPage" class="content-sectionTwo">
+    <div class="image-container">
+      <img src="Images/slide9.png" alt="Ending Header">
+    </div>
+  </section>
+
+  <!-- Links to the external JavaScript file that handles button interactivity -->
+  <script src="jscript.js"></script>
+</body>
+</html>
